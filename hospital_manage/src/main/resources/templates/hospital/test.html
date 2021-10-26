@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/meta :: meta"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <a th:href="@{/hospital/create}">添加</a>
+            </div>
+            <table id="ctr2dptadd" border="1" cellpadding="0" cellspacing="0" style="width:50%;height:100%;font-size: 20px;margin: auto;">
+                <tr>
+                    <th>医院logo</th>
+                    <td><img th:src="${hospital.get('picture')}"/></td>
+                </tr>
+                <tr>
+                    <th>医院编号</th>
+                    <td><span th:text="${hospital.get('hospCode')}"/></td>
+                </tr>
+                <tr>
+                    <th>医院名字</th>
+                    <td><span th:text="${hospital.get('hospName')}"/></td>
+                </tr>
+                <tr>
+                    <th>医院类型</th>
+                    <td><span th:text="${hospital.get('hospType')}"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

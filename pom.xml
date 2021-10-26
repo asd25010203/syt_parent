@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common</module>
+        <module>model</module>
+        <module>service</module>
+        <module>hospital_manage</module>
+        <module>service-gateway</module>
+        <module>service_client</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.hjh</groupId>
+    <artifactId>sty_parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>sty_parent</name>
+    <description>sty_parent</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <cloud.version>2020.0.1</cloud.version>
+        <alibaba.version>2021.1</alibaba.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <mysql.version>5.1.46</mysql.version>
+        <swagger.version>2.7.0</swagger.version>
+        <jwt.version>0.7.0</jwt.version>
+        <fashjson.version>1.2.29</fashjson.version>
+        <httpclient.version>4.5.1</httpclient.version>
+        <aliyun.version>4.1.1</aliyun.version>
+        <oss.version>3.9.1</oss.version>
+        <poi.version>5.0.0</poi.version>
+        <xerces.version>2.12.0</xerces.version>
+        <lombok.version>1.16.18</lombok.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--mybatis-plus 持久层-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--            简化实体类-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--            数据连接-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.23</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--swagger ui-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fashjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+            <!--            工具类-->
+            <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.6.7</version>
+            </dependency>
+            <!-- 操作 ms office -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!--            sax方式读取ms office-->
+            <dependency>
+                <groupId>xerces</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${xerces.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>

@@ -1,0 +1,195 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<configuration debug="true">-->
+<!--    &lt;!&ndash; 项目名称 &ndash;&gt;-->
+<!--    <property name="PROJECT_NAME" value="syt_parent"/>-->
+<!--    &lt;!&ndash;定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径&ndash;&gt;-->
+<!--    <property name="LOG_HOME" value="logs" />-->
+
+<!--    &lt;!&ndash; 控制台输出 &ndash;&gt;-->
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <withJansi>true</withJansi>-->
+<!--        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--            &lt;!&ndash; 格式化输出: %d: 日期; %-5level: 级别从左显示5个字符宽度; %thread: 线程名; %logger: 类名; %M: 方法名; %line: 行号; %msg: 日志消息; %n: 换行符 &ndash;&gt;-->
+<!--            <pattern>%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS}) |%highlight(%-5level) |%blue(%thread)  %yellow(%logger{50})  %cyan(%M)  %blue(%line)       : %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; ERROR日志文件,记录错误日志 &ndash;&gt;-->
+<!--    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${LOG_HOME}/${PROJECT_NAME}/error.log</file>-->
+<!--        &lt;!&ndash; 过滤器，只打印ERROR级别的日志 &ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>ERROR</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash;日志文件输出的文件名&ndash;&gt;-->
+<!--            <FileNamePattern>${LOG_HOME}/${PROJECT_NAME}/%d{yyyy-MM-dd}/error.%i.zip</FileNamePattern>-->
+<!--            &lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--            <MaxHistory>3650</MaxHistory>-->
+<!--            &lt;!&ndash;日志文件最大的大小&ndash;&gt;-->
+<!--            <MaxFileSize>100MB</MaxFileSize>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--            &lt;!&ndash; 格式化输出: %d: 日期; %-5level: 级别从左显示5个字符宽度; %thread: 线程名; %logger: 类名; %M: 方法名; %line: 行号; %msg: 日志消息; %n: 换行符 &ndash;&gt;-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%thread] [%logger{50}] [%M] [%line] - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; INFO日志文件，用于记录重要日志信息 &ndash;&gt;-->
+<!--    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${LOG_HOME}/${PROJECT_NAME}/info.log</file>-->
+<!--        &lt;!&ndash; 过滤器，只打印INFO级别的日志 &ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>INFO</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash;日志文件输出的文件名&ndash;&gt;-->
+<!--            <FileNamePattern>${LOG_HOME}/${PROJECT_NAME}/%d{yyyy-MM-dd}/info.%i.zip</FileNamePattern>-->
+<!--            &lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+<!--            <MaxHistory>3650</MaxHistory>-->
+<!--            &lt;!&ndash;日志文件最大的大小&ndash;&gt;-->
+<!--            <MaxFileSize>100MB</MaxFileSize>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--            &lt;!&ndash; 格式化输出: %d: 日期; %-5level: 级别从左显示5个字符宽度; %thread: 线程名; %logger: 类名; %M: 方法名; %line: 行号; %msg: 日志消息; %n: 换行符 &ndash;&gt;-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%thread] [%logger{50}] [%M] [%line] - %msg%n</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 打印的SQL日志文件，用于执行的SQL语句和参数信息 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <appender name="SQL_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">&ndash;&gt;-->
+<!--&lt;!&ndash;        <file>${LOG_HOME}/${PROJECT_NAME}/sql.log</file>&ndash;&gt;-->
+<!--&lt;!&ndash;        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件输出的文件名&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <FileNamePattern>${LOG_HOME}/${PROJECT_NAME}/%d{yyyy-MM-dd}/sql.%i.zip</FileNamePattern>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件保留天数&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <MaxHistory>3650</MaxHistory>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件最大的大小&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <MaxFileSize>100MB</MaxFileSize>&ndash;&gt;-->
+<!--&lt;!&ndash;        </rollingPolicy>&ndash;&gt;-->
+<!--&lt;!&ndash;        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; 格式化输出: %d: 日期; %-5level: 级别从左显示5个字符宽度; %thread: 线程名; %logger: 类名; %M: 方法名; %line: 行号; %msg: 日志消息; %n: 换行符 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%thread] [%logger{50}] [%M] [%line] - %msg%n</pattern>&ndash;&gt;-->
+<!--&lt;!&ndash;            <charset>UTF-8</charset>&ndash;&gt;-->
+<!--&lt;!&ndash;        </encoder>&ndash;&gt;-->
+<!--&lt;!&ndash;    </appender>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; API请求被访问的日志文件，记录请求的URL和携带的参数 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <appender name="REQUEST_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">&ndash;&gt;-->
+<!--&lt;!&ndash;        <file>${LOG_HOME}/${PROJECT_NAME}/request.log</file>&ndash;&gt;-->
+<!--&lt;!&ndash;        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件输出的文件名&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <FileNamePattern>${LOG_HOME}/${PROJECT_NAME}/%d{yyyy-MM-dd}/request.%i.zip</FileNamePattern>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件保留天数&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <MaxHistory>3650</MaxHistory>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;日志文件最大的大小&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <MaxFileSize>100MB</MaxFileSize>&ndash;&gt;-->
+<!--&lt;!&ndash;        </rollingPolicy>&ndash;&gt;-->
+<!--&lt;!&ndash;        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; 格式化输出: %d: 日期; %-5level: 级别从左显示5个字符宽度; %thread: 线程名; %logger: 类名; %M: 方法名; %line: 行号; %msg: 日志消息; %n: 换行符 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%thread] [%logger{50}] [%M] [%line]- %msg%n</pattern>&ndash;&gt;-->
+<!--&lt;!&ndash;            <charset>UTF-8</charset>&ndash;&gt;-->
+<!--&lt;!&ndash;        </encoder>&ndash;&gt;-->
+<!--&lt;!&ndash;    </appender>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; 异步输出INFO_FILE &ndash;&gt;-->
+<!--    <appender name="ASYNC_INFO_FILE" class="ch.qos.logback.classic.AsyncAppender">-->
+<!--        &lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;-->
+<!--        <queueSize>256</queueSize>-->
+<!--        &lt;!&ndash; 默认情况下，当阻塞队列的剩余容量为20％时，它将丢弃TRACE，DEBUG和INFO级别的事件，仅保留WARN和ERROR级别的事件。要保留所有事件，请将discardingThreshold设置为0。 &ndash;&gt;-->
+<!--        <discardingThreshold>0</discardingThreshold>-->
+<!--        &lt;!&ndash; 添加附加的appender,使用前面定义的name,最多只能添加一个 &ndash;&gt;-->
+<!--        <appender-ref ref="INFO_FILE"/>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; 异步输出ERROR_FILE &ndash;&gt;-->
+<!--    <appender name="ASYNC_ERROR_FILE" class="ch.qos.logback.classic.AsyncAppender">-->
+<!--        &lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;-->
+<!--        <queueSize>256</queueSize>-->
+<!--        &lt;!&ndash; 默认情况下，当阻塞队列的剩余容量为20％时，它将丢弃TRACE，DEBUG和INFO级别的事件，仅保留WARN和ERROR级别的事件。要保留所有事件，请将discardingThreshold设置为0。 &ndash;&gt;-->
+<!--        <discardingThreshold>0</discardingThreshold>-->
+<!--        &lt;!&ndash; 添加附加的appender,使用前面定义的name,最多只能添加一个 &ndash;&gt;-->
+<!--        <appender-ref ref="ERROR_FILE"/>-->
+<!--    </appender>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 异步输出SQL_FILE &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <appender name="ASYNC_SQL_FILE" class="ch.qos.logback.classic.AsyncAppender">&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <queueSize>256</queueSize>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 默认情况下，当阻塞队列的剩余容量为20％时，它将丢弃TRACE，DEBUG和INFO级别的事件，仅保留WARN和ERROR级别的事件。要保留所有事件，请将discardingThreshold设置为0。 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <discardingThreshold>0</discardingThreshold>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 添加附加的appender,使用前面定义的name,最多只能添加一个 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <appender-ref ref="SQL_FILE"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </appender>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 异步输出REQUEST_FILE &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <appender name="ASYNC_REQUEST_FILE" class="ch.qos.logback.classic.AsyncAppender">&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <queueSize>256</queueSize>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 默认情况下，当阻塞队列的剩余容量为20％时，它将丢弃TRACE，DEBUG和INFO级别的事件，仅保留WARN和ERROR级别的事件。要保留所有事件，请将discardingThreshold设置为0。 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <discardingThreshold>0</discardingThreshold>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; 添加附加的appender,使用前面定义的name,最多只能添加一个 &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <appender-ref ref="REQUEST_FILE"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </appender>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; 输出error信息到文件&ndash;&gt;-->
+<!--    <logger name="error" additivity="true">-->
+<!--        <appender-ref ref="ERROR_FILE"/>-->
+<!--    </logger>-->
+
+<!--    &lt;!&ndash; 输出info信息到文件&ndash;&gt;-->
+<!--    <logger name="info" additivity="true">-->
+<!--        <appender-ref ref="INFO_FILE"/>-->
+<!--    </logger>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 输出request信息到文件&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <logger name="request" level="INFO" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <appender-ref ref="REQUEST_FILE" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </logger>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 输出SQL到控制台和文件&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <logger name="org.hibernate.SQL" additivity="false">&ndash;&gt;-->
+<!--&lt;!&ndash;        <level value="DEBUG" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <appender-ref ref="SQL_FILE" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </logger>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; 输出SQL的参数到控制台和文件&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" additivity="false" level="TRACE">&ndash;&gt;-->
+<!--&lt;!&ndash;        <level value="TRACE" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <appender-ref ref="SQL_FILE" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </logger>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; 开发环境下的日志配置 &ndash;&gt;-->
+<!--    <springProfile name="dev">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="CONSOLE" />-->
+<!--            <appender-ref ref="ERROR_FILE" />-->
+<!--            <appender-ref ref="INFO_FILE" />-->
+<!--        </root>-->
+<!--    </springProfile>-->
+
+<!--    &lt;!&ndash; 测试环境下的日志配置 &ndash;&gt;-->
+<!--    <springProfile name="test">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="CONSOLE" />-->
+<!--            <appender-ref ref="ERROR_FILE" />-->
+<!--            <appender-ref ref="INFO_FILE" />-->
+<!--        </root>-->
+<!--    </springProfile>-->
+
+<!--    &lt;!&ndash; 生产环境下的日志配置 &ndash;&gt;-->
+<!--    <springProfile name="prod">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="CONSOLE" />-->
+<!--            <appender-ref ref="ERROR_FILE" />-->
+<!--            <appender-ref ref="INFO_FILE" />-->
+<!--        </root>-->
+<!--    </springProfile>-->
+<!--</configuration>-->

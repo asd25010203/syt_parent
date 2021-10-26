@@ -1,0 +1,93 @@
+[
+  {
+    "name": "order",
+    "path": "/order",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\order\\\\index.vue",
+    "chunkName": "pages/order/index",
+    "_name": "_221b7606"
+  },
+  {
+    "name": "patient",
+    "path": "/patient",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\patient\\\\index.vue",
+    "chunkName": "pages/patient/index",
+    "_name": "_03da476f"
+  },
+  {
+    "name": "user",
+    "path": "/user",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\user\\\\index.vue",
+    "chunkName": "pages/user/index",
+    "_name": "_cbb94456"
+  },
+  {
+    "name": "hospital-booking",
+    "path": "/hospital/booking",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\hospital\\\\booking.vue",
+    "chunkName": "pages/hospital/booking",
+    "_name": "_16c4dbe6"
+  },
+  {
+    "name": "hospital-schedule",
+    "path": "/hospital/schedule",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\hospital\\\\schedule.vue",
+    "chunkName": "pages/hospital/schedule",
+    "_name": "_75dfe993"
+  },
+  {
+    "name": "order-show",
+    "path": "/order/show",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\order\\\\show.vue",
+    "chunkName": "pages/order/show",
+    "_name": "_7ac78ff9"
+  },
+  {
+    "name": "patient-add",
+    "path": "/patient/add",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\patient\\\\add.vue",
+    "chunkName": "pages/patient/add",
+    "_name": "_682594fe"
+  },
+  {
+    "name": "patient-show",
+    "path": "/patient/show",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\patient\\\\show.vue",
+    "chunkName": "pages/patient/show",
+    "_name": "_56b72520"
+  },
+  {
+    "name": "weixin-callback",
+    "path": "/weixin/callback",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\weixin\\\\callback.vue",
+    "chunkName": "pages/weixin/callback",
+    "_name": "_4d51f0e9"
+  },
+  {
+    "name": "hospital-detail-hoscode",
+    "path": "/hospital/detail/:hoscode?",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\hospital\\\\detail\\\\_hoscode.vue",
+    "chunkName": "pages/hospital/detail/_hoscode",
+    "_name": "_5cc6a2f2"
+  },
+  {
+    "name": "hospital-notice-hoscode",
+    "path": "/hospital/notice/:hoscode?",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\hospital\\\\notice\\\\_hoscode.vue",
+    "chunkName": "pages/hospital/notice/_hoscode",
+    "_name": "_a50a9664"
+  },
+  {
+    "name": "hospital-hoscode",
+    "path": "/hospital/:hoscode?",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\hospital\\\\_hoscode.vue",
+    "chunkName": "pages/hospital/_hoscode",
+    "_name": "_496d5f14"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "F:\\\\springCloud\\\\sty_parent\\\\user\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_249d0a80"
+  }
+]
